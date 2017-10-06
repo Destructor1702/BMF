@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+  <head>
+    <meta charset="UTF-8">
+    <title>Kibus</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="libraries/p5.js" type="text/javascript"></script>
+
+    <script src="libraries/p5.dom.js" type="text/javascript"></script>
+
+
+    <script src="Hero.js" type="text/javascript"></script>
+    <script src="sketch.js" type="text/javascript"></script>
+    <script src="cell.js" type="text/javascript"></script>
+
+
+    <style> body {padding: 10px; margin: 0; display: flex} canvas {vertical-align: top;top:30px} </style>
+  </head>
+  <body>
+
+
+  <div class="control">
+      <strong style="font-weight: bold; font-size: 32pt">BMF</strong>
+      <br>____________________<br>
+      <br>
+      <div id="controlUnitcont">
+            Controles:
+          <button class="button" style="background-color: coral"
+                  onclick="
+                  location.href='index.html?obs='+document.getElementById('obstSlider').value
+                                +'&'+'WaterVal='+document.getElementById('WaterSlider').value
+                                +'&'+'SandVal='+document.getElementById('SandSlider').value
+                                +'&'+'TreeVal='+document.getElementById('TreeSlider').value
+
+                                   ;">Otro Mapa</button>
+          <br>
+          <div>Obstaculos:</div><br>
+          20% <input id="obstSlider" title="Obstaculos(%)" type="range" value="40"  min="20" max="80"> 80%
+          <br>
+          <div>Agua:</div><br>
+          20% <input id="WaterSlider" title="Obstaculos(%)" type="range" value="40"  min="20" max="80"> 80%
+          <br>
+          <div>Arena:</div><br>
+          20% <input id="SandSlider" title="Obstaculos(%)" type="range" value="40"  min="20" max="80"> 80%
+          <br>
+          <div>Arboles: </div><br>
+          20% <input id="TreeSlider" title="Obstaculos(%)" type="range" value="40"  min="20" max="80"> 80%
+          <br>
+          <br>
+          <button class="roundButton" id="Kb_btn" style="
+                  background-color: forestgreen;
+                  background: url('./assets/flag.png');
+                  background-repeat: no-repeat;
+                  background-color: forestgreen;
+                  background-position: center;"
+                  onclick="en_start = true; "></button>
+          <button class="roundButton" style="
+                  background-color: forestgreen;
+                  background: url('./assets/house.png');
+                  background-repeat: no-repeat;
+                  background-color: forestgreen;
+                  background-position: center;"
+                  onclick="en_end   = true;"></button>
+          <button class="roundButton" style="
+                  background-color: forestgreen;
+                  background: url('./assets/rock.png');
+                  background-repeat: no-repeat;
+                  background-color: forestgreen;
+                  background-position: center;"
+                  onclick="en_tree  = true;"></button>
+          <button class="roundButton" style="
+                  background-color: forestgreen;"
+                  onclick="en_empty = true;"></button>
+                <br>
+          <button class="button" onclick="
+                  locked = true;
+
+           ">Camino!</button>
+          <br>
+          <br>   Datos   <br>
+          <br>
+          <br>
+          <div id="DataUnit" >
+              <div id="Mombodata">
+                <img src="assets/Mombo_big.png" height="200px">
+                  <div id="Mombostatus">listo</div>
+              </div>
+              <div id="Lucasdata">
+                  <img src="assets/Lucas_big.png"height="200px">
+                  <div id="Lucasstatus">Listo</div>
+              </div>
+              <div id="Pirolodata">
+                  <img src="assets/Pirolo_big.png"height="200px">
+                  <div id="Pirolostatus">Listo</div>
+              </div>
+          </div>
+          <br>
+          <small style="font-size: 10pt"> Copyright (c) 2017 Diego Vallejo </small>
+          <br>
+      </div>
+
+  </div>
+
+
+
+  </body>
+
+<script>
+    document.getElementById('obstSlider').setAttribute("value",""+getParameterByName('obs'));
+    document.getElementById('WaterSlider').setAttribute("value",""+getParameterByName('WaterVal'));
+    document.getElementById('SandSlider').setAttribute("value",""+getParameterByName('SandVal'));
+    document.getElementById('TreeSlider').setAttribute("value",""+getParameterByName('TreeVal'));
+</script>
+</html>
